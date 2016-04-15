@@ -1,0 +1,14 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% if user_signed_in? %>
+ <%= link_to 'sign out', destroy_user_session_path, method: :delete%>
+<% else %>
+ 
+ <% end %> 
+
+<ol>
+ <% @profiles.each do |profile| %>
+  <a href=" <%= profile_path(profile.id) %>"><li><%= profile.name %> (<%= profile.level%>)</li> </a>
+ <% end %>
+</ol> 
